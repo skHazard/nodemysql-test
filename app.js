@@ -9,14 +9,14 @@ var app = express();
 
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '1234',
-    database : 'fortest'
+    host: 'localhost',
+    user: 'root',
+    password: '1234',
+    database: 'fortest'
 });
 
-connection.connect(function(err){
-    if(!err) {
+connection.connect(function (err) {
+    if (!err) {
         console.log("Database connected successfully... \n\n");
     } else {
         console.log("Error connecting to database ... \n\n");
@@ -24,10 +24,10 @@ connection.connect(function(err){
 });
 
 
-app.get("/",function(req,res){
+app.get("/", function (req, res) {
     res.send('Testing app is running!');
 
-    connection.query('SELECT * from INVENTORY', function(err, rows, fields) {
+    connection.query('SELECT * from INVENTORY', function (err, rows, fields) {
         connection.end();
         if (!err)
             console.log('The solution is: ', rows);
@@ -40,7 +40,9 @@ app.listen(3000, function () {
     console.log('May the Node be with you on port 3000! :)')
 });
 
-module.exports=connection;
+module.exports = connection;
+
+
 
 
 

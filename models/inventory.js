@@ -3,26 +3,27 @@
  */
 var db = require('../app');
 
-var Inventory={
+var Inventory = {
 
-    listInventory:function(callback){
+    listInventory: function (callback) {
 
-        return db.query("Select * from inventory",callback);
+        return db.query("Select * from inventory", callback);
 
     },
-    getInventoryById:function(id,callback){
+    getInventoryById: function (id, callback) {
 
-        return db.query("select * from inventory where Id=?",[id],callback);
+        return db.query("select * from inventory where Id=?", [id], callback);
     },
-    createInventory:function(Inventory,callback){
-        return db.query("Insert into inventory values(?,?,?)",[Inventory.Id,Inventory.Name,Inventory.Description],callback);
+    createInventory: function (Inventory, callback) {
+        return db.query("Insert into inventory values(?,?,?)", [Inventory.Id, Inventory.Name, Inventory.Description], callback);
     },
-    deleteInventoryById:function(id,callback){
-        return db.query("delete from inventory where Id=?",[id],callback);
+    deleteInventoryById: function (id, callback) {
+        return db.query("delete from inventory where Id=?", [id], callback);
     },
-    updateInventoryById:function(id,Inventory,callback){
-        return db.query("update inventory set Name=?, Description=? where Id=?",[Inventory.Name,Inventory.Description,id],callback);
+    updateInventoryById: function (id, Inventory, callback) {
+        return db.query("update inventory set Name=?, Description=? where Id=?", [Inventory.Name, Inventory.Description, id], callback);
     }
 
 };
-module.exports=Inventory;
+module.exports = Inventory;
+
