@@ -1,78 +1,68 @@
 /**
  * Created by Hazard on 13.06.2017.
  */
-
-var express = require('express');
-var router = express.Router();
 var Inventory = require('../models/Inventory');
 
-router.get('/:id?', function (req, res, next) {
+
+module.exports = function(app) {
+    app.get('/:id', function (req, res, next) {
 
     if (req.params.id) {
-
         Inventory.getInventoryById(req.params.id, function (err, rows) {
-
             if (err) {
-                res.json(err);
-            }
-            else {
+                next(err);
+            } else {
                 res.json(rows);
             }
         });
-    }
-    else {
-
+    } else {
         Inventory.listInventory(function (err, rows) {
-
             if (err) {
-                res.json(err);
-            }
-            else {
+                next(err);
+            } else {
                 res.json(rows);
             }
-
         });
     }
 });
-router.post('/', function (req, res, next) {
+app.post('/', function (req, res, next) {
+    console.log(req.body);
 
-    Inventory.createInventory(req.body, function (err, count) {
-
-        // TODO: The id for the created record should be returned up-on-success.
+    Inventory.createInventory(req.body, function (err, result) {
 
         if (err) {
-            res.json(err);
+            next(err);
         }
         else {
-            res.json(req.body); //or return count for 1
+            res.json(result.insertId);
         }
     });
 });
-router.delete('/:id', function (req, res, next) {
+app.delete('/:id', function (req, res, next) {
 
-    Inventory.deleteInventoryById(req.params.id, function (err, count) {
+    Inventory.deleteInventoryById(req.params.id, function (err) {
 
         if (err) {
-            res.json(err);
+            next(err);
         }
         else {
-            res.json(count);
+            res.sendStatus(200);
         }
 
     });
 });
-router.put('/:id', function (req, res, next) {
+app.put('/:id', function (req, res, next) {
 
-    Inventory.updateInventoryById(req.params.id, req.body, function (err, rows) {
+    Inventory.updateInventoryById(req.params.id, req.body, function (err) {
 
         if (err) {
-            res.json(err);
+            next(err);
         }
         else {
-            res.json(rows);
+            res.sendStatus(200);
         }
     });
 });
-module.exports = router;
+};
 
 
