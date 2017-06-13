@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : '1234',
-    database : 'inventory'
+    database : 'fortest'
 });
 
 connection.connect(function(err){
@@ -21,9 +21,16 @@ connection.connect(function(err){
 });
 
 
+app.get("/",function(req,res){
+    res.send('Testing app is running!');
 
-app.get('/', function (req, res) {
-    res.send('Testing app is running!')
+    connection.query('SELECT * from INVENTORY', function(err, rows, fields) {
+        connection.end();
+        if (!err)
+            console.log('The solution is: ', rows);
+        else
+            console.log('Error while performing Query.');
+    });
 });
 
 app.listen(3000, function () {
