@@ -1,6 +1,9 @@
 /**
  * Created by Hazard on 13.06.2017.
  */
+var routes = require('./routes/router');
+var Inventory = require('./models/Inventory');
+
 var express = require('express');
 var app = express();
 

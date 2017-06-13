@@ -10,9 +10,9 @@ var Inventory={
         return db.query("Select * from inventory",callback);
 
     },
-    getTaskById:function(id,callback){
+    getInventoryById:function(id,callback){
 
-        return db.query("select * from task where Id=?",[id],callback);
+        return db.query("select * from inventory where Id=?",[id],callback);
     },
     createInventory:function(Inventory,callback){
         return db.query("Insert into inventory values(?,?,?)",[Inventory.Id,Inventory.Name,Inventory.Description],callback);
