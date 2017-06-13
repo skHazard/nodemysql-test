@@ -5,7 +5,7 @@ var Inventory = require('../models/Inventory');
 
 
 module.exports = function (app) {
-    app.get('/:id', function (req, res, next) {
+    app.get('/:id?', function (req, res, next) {
 
         if (req.params.id) {
             Inventory.getInventoryById(req.params.id, function (err, rows) {
