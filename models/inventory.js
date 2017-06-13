@@ -40,5 +40,7 @@ var Inventory = {
     }
 
 };
+
 module.exports = Inventory;
+
 

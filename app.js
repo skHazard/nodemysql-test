@@ -10,11 +10,10 @@ app.use(bodyParser.json());
 
 routes(app);
 
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res) {
     console.log(err);
     res.sendStatus(500);
 });
-
 
 
 app.listen(3000, function () {
