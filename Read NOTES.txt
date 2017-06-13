@@ -1,0 +1,7 @@
+Short structure description:
+
+package.json - dependencies used for this app, please run npm i to install all dependencies
+fortest.sql - script for DB and initial table creation
+app.js - entry point of app
+models/inventory.js - implementation of DB connection and all basic queries
+routes/router.js - implementation of basic routes
