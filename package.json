@@ -1,0 +1,23 @@
+{
+  "name": "nodemysql-test",
+  "version": "1.0.0",
+  "description": "Node Express app with MyQSL connection",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skHazard/nodemysql-test.git"
+  },
+  "author": "skHazard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skHazard/nodemysql-test/issues"
+  },
+  "homepage": "https://github.com/skHazard/nodemysql-test#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "node-mysql": "^0.4.2"
+  }
+}
