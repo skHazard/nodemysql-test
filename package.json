@@ -4,7 +4,8 @@
   "description": "Node Express app with MyQSL connection",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,6 @@
   "homepage": "https://github.com/skHazard/nodemysql-test#readme",
   "dependencies": {
     "express": "^4.15.3",
-    "node-mysql": "^0.4.2"
+    "mysql": "^2.13.0"
   }
 }
