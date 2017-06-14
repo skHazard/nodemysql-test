@@ -3,19 +3,18 @@
  */
 var routes = require('./routes/router');
 var express = require('express');
-var Inventory = require('./models/inventory');
+var path = require('path');
+
 
 var app = express();
-//
-// app.set('views', __dirname + '/views');
+
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 
 app.get('/', function(req, res) {
 
-    var name = "SERHIY";
-    var inv = [Inventory.Name];
-    res.render('index', {name: name});
-    res.render('index', {inv: inv});
+    res.render('index');
 });
 
 var bodyParser = require('body-parser');

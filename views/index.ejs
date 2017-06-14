@@ -10,8 +10,7 @@
 </head>
 <table class="table table-striped">
     <h1>Invenrory</h1>
-    <h3><%= name %></h3>
-    <h3><%= inv %></h3>
+
     <thead>
     <tr>
         <th>No</th>
@@ -55,12 +54,12 @@
     </tr>
     </tbody>
 </table>
-<div class="form-group">
+<fieldset>
+<form class="form-group" action="/add" method="post">
     <label for="name">Name:</label>
     <input type="text" class="form-control" id="name">
-</div>
-<div class="form-group">
     <label for="description">Description:</label>
     <textarea class="form-control" rows="5" id="description"></textarea>
-</div>
+</form>
 <button type="button" class="btn btn-primary btn-md">Add Item</button>
+</fieldset>

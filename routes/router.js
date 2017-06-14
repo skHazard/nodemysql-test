@@ -2,15 +2,10 @@
  * Created by Hazard on 13.06.2017.
  */
 var Inventory = require('../models/inventory');
-var path = require('path');
 
 
 
 module.exports = function (app) {
-
-    // app.get('/', function (req, res) {
-    //     res.sendFile('index.html', { root: path.join(__dirname, '../') });
-    // });
 
     app.get('/:id?', function (req, res, next) {
 
