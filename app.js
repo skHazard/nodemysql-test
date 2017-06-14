@@ -3,6 +3,7 @@
  */
 var routes = require('./routes/router');
 var express = require('express');
+var Inventory = require('./models/inventory');
 
 var app = express();
 //
@@ -10,7 +11,11 @@ var app = express();
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-    res.render('index');
+
+    var name = "SERHIY";
+    var inv = [Inventory.Name];
+    res.render('index', {name: name});
+    res.render('index', {inv: inv});
 });
 
 var bodyParser = require('body-parser');

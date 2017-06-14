@@ -1,7 +1,7 @@
 /**
  * Created by Hazard on 13.06.2017.
  */
-var Inventory = require('../models/Inventory');
+var Inventory = require('../models/inventory');
 var path = require('path');
 
 
