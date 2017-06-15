@@ -29,7 +29,7 @@ function renderData(data) {
     });
 
     innerHtml += `<tr class="inventory-list-x">
-        <td>new</td>
+        <td>New Item</td>
         <td><input type="text" class="form-control inventory-name-x"></td>
         <td><textarea class="form-control inventory-desc-x" rows="5"></textarea></td>
         <td>

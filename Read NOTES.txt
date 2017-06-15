@@ -5,3 +5,5 @@ fortest.sql - script for DB and initial table creation
 app.js - entry point of app
 models/inventory.js - implementation of DB connection and all basic queries
 routes/router.js - implementation of basic routes
+main.js - script for front-end part using ajax requests
+index.ejs - used as view representation for UI
