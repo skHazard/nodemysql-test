@@ -9,57 +9,17 @@
             crossorigin="anonymous"></script>
 </head>
 <table class="table table-striped">
-    <h1>Invenrory</h1>
+    <h1>Inventory</h1>
 
     <thead>
     <tr>
         <th>No</th>
         <th>Name</th>
         <th>Description</th>
+        <th>Action</th>
     </tr>
     </thead>
-    <tbody>
-    <tr>
-        <td>1</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>
-            <div class="btn-group-sm">
-                <button type="button" class="btn btn-primary">Edit</button>
-                <button type="button" class="btn btn-primary">Delete</button>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-        <td>
-            <div class="btn-group-sm">
-                <button type="button" class="btn btn-primary">Edit</button>
-                <button type="button" class="btn btn-primary">Delete</button>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td>
-            <div class="btn-group-sm">
-                <button type="button" class="btn btn-primary">Edit</button>
-                <button type="button" class="btn btn-primary">Delete</button>
-            </div>
-        </td>
-    </tr>
-    </tbody>
+    <tbody class="inventory-list"></tbody>
 </table>
-<fieldset>
-<form class="form-group" action="/add" method="post">
-    <label for="name">Name:</label>
-    <input type="text" class="form-control" id="name">
-    <label for="description">Description:</label>
-    <textarea class="form-control" rows="5" id="description"></textarea>
-</form>
-<button type="button" class="btn btn-primary btn-md">Add Item</button>
-</fieldset>
+
+<script src="./main.js"></script>

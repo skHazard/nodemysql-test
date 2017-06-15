@@ -1,5 +1,5 @@
 /**
- * Created by Hazard on 13.06.2017.
+ * Establishing MySQL connection and making DB queries
  */
 var mysql = require('mysql');
 var connection = mysql.createConnection({
@@ -21,12 +21,9 @@ connection.connect(function (err) {
 var Inventory = {
 
     listInventory: function (callback) {
-
         return connection.query("select * from inventory", callback);
-
     },
     getInventoryById: function (id, callback) {
-
         return connection.query("select * from inventory where Id=?", [id], callback);
     },
     createInventory: function (Inventory, callback) {
@@ -38,9 +35,7 @@ var Inventory = {
     updateInventoryById: function (id, Inventory, callback) {
         return connection.query("update inventory set Name=?, Description=? where Id=?", [Inventory.Name, Inventory.Description, id], callback);
     }
-
 };
 
 module.exports = Inventory;
-
 
